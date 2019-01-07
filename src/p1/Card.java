@@ -29,9 +29,9 @@ public class Card {
      */
     private String suit;
     /**
-     * Rank of card.
+     * Ordinal rank of card.
      */
-    private int rank;
+    private int ordinal;
     /**
      * Value of card.
      */
@@ -48,11 +48,45 @@ public class Card {
      */
     public Card(int suitIndex, int rankIndex) {
         suit = suitList[suitIndex];
-        rank = rankList[rankIndex];
+        ordinal = rankList[rankIndex];
         value = rankList[rankIndex];
         face = faceList[rankIndex];
-        
     }
-    
-    
+    /**
+     * Gets the suit of the card.
+     * @return suit
+     */
+    public String getSuit() {
+        return suit;
+    }
+    /**
+     * Gets the face value of the card.
+     * @return face
+     */
+    public String getFace() {
+        return face;
+    }
+    /**
+     * Gets the value of the card.
+     * @return value
+     */
+    public int getValue() {
+        return value;
+    }
+    /**
+     * Gets the ordinal value of the card.
+     * @return ordinal
+     */
+    public int getOrdinal() {
+        return ordinal;
+    }
+    /**
+     * Returns the card as a string.
+     * @return cardString
+     */
+    public String toString() {
+        String cardString = "Card: " + face + " of " + suit 
+                + "\nValue:" + value;
+        return cardString;
+    }
 }
