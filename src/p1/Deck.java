@@ -2,23 +2,23 @@
 package p1;
 
 import java.util.ArrayList;
-<<<<<<< HEAD
-=======
 import java.util.Collections;
->>>>>>> 2fae3095b1f8563eb86bc1540ac9d93e14c8943b
 import java.util.Random;
 
 public class Deck {
     
     /** Number of cards in this deck. */
-    private final int numOfCardsInADeck = 52;
+    private static final int numOfCardsInADeck = 52;
     /** Number of cards in this deck. */
     private final int numOfSuits = 4;
     /** Number of cards in this deck. */
     private final int numOfRanks = 13;
     /** An array list represents this deck. */
     private ArrayList<Card> deck;
+    /** Shuffles Deck.*/
     private ArrayList<Card> shuffleDeck;
+    
+    int count = 0;
     
     public Deck () {
         deck = new ArrayList<Card>();
@@ -30,17 +30,10 @@ public class Deck {
         shuffle();
     }
     
-<<<<<<< HEAD
 //    public Card deal() {
 //        
 //    }
-    /**
-     * Shuffles the deck.
-     */
-    public void shuffle() {
-        Random random = new Random();
-        random.nextInt(51);
-=======
+
     /**
      * Swaps the elements in this deck randomly.
      */
@@ -48,12 +41,12 @@ public class Deck {
         int i;
         int j;
         Random rand = new Random();
+        
         for (int times = 0; times < numOfCardsInADeck; times++ ) {
             i = rand.nextInt(deck.size() - 1);
             j = rand.nextInt(deck.size() - 1);
             Collections.swap(deck, i, j);
         }
->>>>>>> 2fae3095b1f8563eb86bc1540ac9d93e14c8943b
     }
     
     /**
@@ -61,7 +54,14 @@ public class Deck {
      * @return Card.
      */
     public Card deal() {
-        return deck.remove(0);
+        return deck.get(count++);
+    }
+    /**
+     * Resets the game.
+     */
+    public void resetGame() {
+        count = 0;
+        shuffle();
     }
     
     /**

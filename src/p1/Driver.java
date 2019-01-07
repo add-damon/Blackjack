@@ -3,7 +3,7 @@
  */
 package p1;
 
-<<<<<<< HEAD
+
 /*
  * 1) Create deck
  * 2) Shuffle deck
@@ -16,11 +16,10 @@ package p1;
  *      b) stay/bust
  * 6) See winner
  */
-=======
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
->>>>>>> 2fae3095b1f8563eb86bc1540ac9d93e14c8943b
+
 
 /**
  * Drives the program.
