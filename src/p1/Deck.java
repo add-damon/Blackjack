@@ -7,9 +7,13 @@ import java.util.Random;
 
 public class Deck {
     
+    /** Number of cards in this deck. */
     private final int numOfCardsInADeck = 52;
+    /** Number of cards in this deck. */
     private final int numOfSuits = 4;
+    /** Number of cards in this deck. */
     private final int numOfRanks = 13;
+    /** An array list represents this deck. */
     private ArrayList<Card> deck;
     
     public Deck () {
@@ -21,18 +25,33 @@ public class Deck {
         }
         shuffle();
     }
-
+    
+    /**
+     * Swaps the elements in this deck randomly.
+     */
     public void shuffle() {
         int i;
         int j;
         Random rand = new Random();
         for (int times = 0; times < numOfCardsInADeck; times++ ) {
-            i = rand.nextInt(numOfCardsInADeck);
-            j = rand.nextInt(numOfCardsInADeck);
+            i = rand.nextInt(deck.size() - 1);
+            j = rand.nextInt(deck.size() - 1);
             Collections.swap(deck, i, j);
         }
     }
     
+    /**
+     * Deals the first Card in this Deck.
+     * @return Card.
+     */
+    public Card deal() {
+        return deck.remove(0);
+    }
+    
+    /**
+     * Returns a concatenation of whatever Card left in this deck.
+     * @return String.
+     */
     @Override
     public String toString() {
         String result = "";
