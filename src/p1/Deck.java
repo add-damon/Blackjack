@@ -41,7 +41,7 @@ public class Deck {
     }
     
     /**
-     * Deals the first Card in this Deck.
+     * Returns and removes the first Card in this Deck.
      * @return Card.
      */
     public Card deal() {

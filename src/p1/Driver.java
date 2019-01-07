@@ -36,14 +36,13 @@ public class Driver {
         Deck d = new Deck();
         
         //the first player will be the dealer.
-        for (int counter = 0; counter <= numOfPlayers; counter ++) {
+        for (int counter = 0; counter < numOfPlayers; counter ++) {
             Player newPlayer = new Player();
             newPlayer.hit(d);
             newPlayer.hit(d);
             players.add(new Player());
             System.out.println("Player" + counter + ": \n" + newPlayer);
         }
-        
         
         scan.close();
         System.out.println("Game Ended.");
