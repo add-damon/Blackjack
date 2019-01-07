@@ -2,6 +2,7 @@
 package p1;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Deck {
     
@@ -9,6 +10,7 @@ public class Deck {
     private final int numOfSuits = 4;
     private final int numOfRanks = 13;
     private ArrayList<Card> deck;
+    private ArrayList<Card> shuffleDeck;
     
     public Deck () {
         deck = new ArrayList<Card>();
@@ -22,9 +24,12 @@ public class Deck {
 //    public Card deal() {
 //        
 //    }
-    
+    /**
+     * Shuffles the deck.
+     */
     public void shuffle() {
-        
+        Random random = new Random();
+        random.nextInt(51);
     }
     
     
