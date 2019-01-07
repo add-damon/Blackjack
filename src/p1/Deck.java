@@ -2,6 +2,8 @@
 package p1;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 public class Deck {
     
@@ -17,20 +19,26 @@ public class Deck {
                 deck.add(new Card(suitIndex, rankIndex));
             }
         }
+        shuffle();
     }
-    
-//    public Card deal() {
-//        
-//    }
-    
+
     public void shuffle() {
-        
+        int i;
+        int j;
+        Random rand = new Random();
+        for (int times = 0; times < numOfCardsInADeck; times++ ) {
+            i = rand.nextInt(numOfCardsInADeck);
+            j = rand.nextInt(numOfCardsInADeck);
+            Collections.swap(deck, i, j);
+        }
     }
     
-    
+    @Override
     public String toString() {
         String result = "";
-        
+        for (Card c : deck) {
+            result += c + "\n";
+        }
         return result;
     }
 }
