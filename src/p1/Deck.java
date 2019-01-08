@@ -18,7 +18,7 @@ public class Deck {
     /** Shuffles Deck.*/
     private ArrayList<Card> shuffleDeck;
     
-    int count = 0;
+    int deckIndex = 0;
     
     public Deck () {
         deck = new ArrayList<Card>();
@@ -53,14 +53,18 @@ public class Deck {
      * Returns and removes the first Card in this Deck.
      * @return Card.
      */
-    public Card deal() {
-        return deck.get(count++);
+    public Card hit() {
+        return deck.get(deckIndex++);
+    }
+    
+    public int deal() {
+        return deckIndex;
     }
     /**
      * Resets the game.
      */
     public void resetGame() {
-        count = 0;
+        deckIndex = 0;
         shuffle();
     }
     

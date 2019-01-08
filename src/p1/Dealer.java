@@ -45,15 +45,15 @@ public class Dealer {
      * 4 = bust.
      * @return status int
      */
-    private int status() {
-        int status;
+    private int status(Deck deck) {
+        int status = 0;
         int value = getHandValue();
         
         if (value < 17) {
-            //hit
+            cards.add(deck.deal());
             status = 1;
         } else if (value < 21) {
-            //stand
+            
             status = 2;
         } else if (value == 21) {
             //blackjack
@@ -63,11 +63,15 @@ public class Dealer {
             status = 4;
         }
         
+        
         return status;
     }
 
-    
-    public String checkStatus() {
+    /**
+     * Prints out what is happening.
+     * @return printed status.
+     */
+    public String printStatus() {
         String print = "";
         switch (status()) {
             case 1:
@@ -87,4 +91,5 @@ public class Dealer {
         
         return print;
     }
+    
 }
