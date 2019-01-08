@@ -24,6 +24,7 @@ public class Card {
      * Array of suits.
      */
     private String[] suitList = {"Spades", "Clubs", "Diamonds", "Hearts"};
+    
     /**
      * Suit of card.
      */

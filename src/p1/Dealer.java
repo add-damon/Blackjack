@@ -13,7 +13,7 @@ public class Dealer {
      * Clear's the dealer's hand.
      */
     public void clear() {
-        cards.clear();        
+        cards.clear();
     }
     /**
      * Dealer hits.
