@@ -3,12 +3,28 @@
  */
 package p1;
 
+
+/*
+ * 1) Create deck
+ * 2) Shuffle deck
+ * 3) Deal Cards
+ * 4) Player plays
+ *      a) hit
+ *      b) stay/bust
+ * 5) Dealer plays
+ *      a) hit
+ *      b) stay/bust
+ * 6) See winner
+ */
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
 /**
- * @author 
+ * Drives the program.
+ * @author DDD
+ * @version 1.0
  *
  */
 public class Driver {
@@ -25,12 +41,17 @@ public class Driver {
             System.out.print("How many players: ");
             try {
                 numOfPlayers = scan.nextInt();
+                if (numOfPlayers <= 0 || numOfPlayers > 5) {
+                    throw new InputMismatchException();
+                }
                 valid = true;
             } catch (InputMismatchException e) {
                 scan.nextLine();
-                System.out.println(e + ": Please enter an integer");
+                System.out.println(e 
+                    + ": Please enter an integer between 1 to 5");
                 valid = false;
             }
+            
         } while (!valid);
         
         Deck d = new Deck();

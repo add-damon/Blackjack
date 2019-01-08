@@ -8,13 +8,17 @@ import java.util.Random;
 public class Deck {
     
     /** Number of cards in this deck. */
-    private final int numOfCardsInADeck = 52;
+    private static final int numOfCardsInADeck = 52;
     /** Number of cards in this deck. */
     private final int numOfSuits = 4;
     /** Number of cards in this deck. */
     private final int numOfRanks = 13;
     /** An array list represents this deck. */
     private ArrayList<Card> deck;
+    /** Shuffles Deck.*/
+    private ArrayList<Card> shuffleDeck;
+    
+    int count = 0;
     
     public Deck () {
         deck = new ArrayList<Card>();
@@ -26,6 +30,10 @@ public class Deck {
         shuffle();
     }
     
+//    public Card deal() {
+//        
+//    }
+
     /**
      * Swaps the elements in this deck randomly.
      */
@@ -33,6 +41,7 @@ public class Deck {
         int i;
         int j;
         Random rand = new Random();
+        
         for (int times = 0; times < numOfCardsInADeck; times++ ) {
             i = rand.nextInt(deck.size() - 1);
             j = rand.nextInt(deck.size() - 1);
@@ -45,7 +54,14 @@ public class Deck {
      * @return Card.
      */
     public Card deal() {
-        return deck.remove(0);
+        return deck.get(count++);
+    }
+    /**
+     * Resets the game.
+     */
+    public void resetGame() {
+        count = 0;
+        shuffle();
     }
     
     /**
