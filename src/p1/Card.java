@@ -12,7 +12,7 @@ public class Card {
     /**
      * Array of rank of cards.
      */
-    private int[] rankList = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 10, 11};
+    private int[] valueList = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 10, 11};
     
     /**
      * Face value of the cards.
@@ -48,8 +48,8 @@ public class Card {
      */
     public Card(int suitIndex, int rankIndex) {
         suit = suitList[suitIndex];
-        ordinal = rankList[rankIndex];
-        value = rankList[rankIndex];
+        ordinal = rankIndex;
+        value = valueList[rankIndex];
         face = faceList[rankIndex];
     }
     /**
